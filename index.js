@@ -19,6 +19,7 @@ async function run() {
         await client.connect();
         const productCollection = client.db('manufacturer_website').collection('products');
         const orderCollection = client.db('manufacturer_website').collection('orders');
+        const reviewCollection = client.db('manufacturer_website').collection('review');
 
 
 
@@ -48,6 +49,13 @@ async function run() {
       const orders = await orderCollection.find(query).toArray();
       res.send(orders);
   });
+
+  app.get('/review', async(req, res) => {
+    const query = {};
+    const cursor = reviewCollection.find(query);
+    const review = await cursor.toArray();
+    res.send(review);
+});
 
     }
 
