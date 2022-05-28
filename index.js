@@ -18,13 +18,17 @@ async function run() {
     try {
         await client.connect();
         const productCollection = client.db('manufacturer_website').collection('products');
+        const orderCollection = client.db('manufacturer_website').collection('orders');
+
+
+
         app.get('/product', async(req, res) => {
             const query = {};
             const cursor = productCollection.find(query);
             const products = await cursor.toArray();
             res.send(products);
         });
-        
+
         app.get('/product/:id', async(req, res) =>{
           const id = req.params.id;
           const query={_id: ObjectId(id)};
@@ -32,6 +36,11 @@ async function run() {
           res.send(product);
       });
         
+      app.post('/orders', async(req, res) =>{
+        const orders = req.body;
+        const result = await orderCollection.insertOne(orders);
+        res.send(result);
+    });
 
     }
 
