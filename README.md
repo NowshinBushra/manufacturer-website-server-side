@@ -1,10 +1,3 @@
-## Website Name
-
-Manufacturer Website
-
-## Live Website Link
-Open [https://manufacturer-website-fbeb0.web.app/](https://manufacturer-website-fbeb0.web.app/) to view it in your browser.
-
 ## Website Features and Functions
 * This website homepage includes navigation bar, banner, tools container, progress, customers reviews, payment sites, missions  and footer.
 * Navigation bar which contains home, blogs, my portfolio, dashboard, login/logout  sections etc.
